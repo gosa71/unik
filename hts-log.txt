@@ -1,0 +1,33 @@
+HTTrack3.48-22+htsswf+htsjava launched on Fri, 29 Jul 2016 17:30:13 at http://demo.newdolly.dollysites.ru/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%P%h%s%u%I0p3DaK0H0%kf2A250000%f0#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "ru, en, *" http://demo.newdolly.dollysites.ru/ -O1 "C:\РњРѕРё Web РЎР°Р№С‚С‹\123456789" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+17:31:23	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): demo.newdolly.dollysites.ru/faq/forum.palgame.ru
+17:31:26	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): demo.newdolly.dollysites.ru/faq/palgame.ru
+17:32:59	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): demo.newdolly.dollysites.ru/pic/things/gems/gems_bv.jpg
+17:34:09	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): demo.newdolly.dollysites.ru/style/mCSB_buttons.png
+17:35:25	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 7880): store.palgame.ru/store/1.0/ICO/ICO_hero_female/crusader_armor/helm_crusader_armor_V.jpg
+17:35:35	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): demo.newdolly.dollysites.ru/pic/news/button/button_big_p_001.jpg
+17:35:35	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): demo.newdolly.dollysites.ru/pic/news/button/button_big_p_003.jpg
+17:35:36	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): demo.newdolly.dollysites.ru/pic/news/button/button_big_p_002.jpg
+17:35:54	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): demo.newdolly.dollysites.ru/news/theme471/yaShare2Popup
+17:37:28	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 7853): store.palgame.ru/store/1.0/ICO/ICO_hero_female/squire_armor/shield_squire_armor_BW.jpg
+17:37:55	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 5998): store.palgame.ru/store/1.0/ICO/ICO_hero_female/cape/pvp/august2015/cape_pvp_V.jpg
+17:40:53	Warning: 	Link demo.newdolly.dollysites.ru/sign/ not scanned (follow robots meta tag)
+17:43:32	Error: 	"Authorization Required" (401) at link store.devpalgame.ru/store/1.0/avatar/male_p1.jpg (from demo.newdolly.dollysites.ru/style/account.css_m_v=280416)
+17:44:31	Warning: 	Retry after error -5 (Unable to get server's address: Этот хост неизвестен. ) at link i/shop/shop-gold.png (from demo.newdolly.dollysites.ru/news/theme230/)
+17:45:36	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): demo.newdolly.dollysites.ru/store/dolly_style/dolly_style.css
+17:45:37	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): demo.newdolly.dollysites.ru/store/dolly_favicon.png
+17:45:38	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): demo.newdolly.dollysites.ru/store/dolly_js/select.js
+17:45:39	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): demo.newdolly.dollysites.ru/store/dolly_js/jquery.livequery.js
+17:45:40	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): demo.newdolly.dollysites.ru/store/dolly_js/main.js
+17:45:42	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 0): demo.newdolly.dollysites.ru/store/dolly_images/logo.png
+17:48:20	Warning: 	Retry after error -5 (Unable to get server's address: unknown error) at link i/shop/shop-gold.png (from demo.newdolly.dollysites.ru/news/theme230/)
+17:48:36	Error: 	"Unable to get server's address: unknown error" (-5) after 2 retries at link i/shop/shop-gold.png (from demo.newdolly.dollysites.ru/news/theme230/)
+
+HTTrack Website Copier/3.48-22 mirror complete in 18 minutes 23 seconds : 4527 links scanned, 4522 files written (52130040 bytes overall) [53525874 bytes received at 48527 bytes/sec]
+(2 errors, 20 warnings, 0 messages)

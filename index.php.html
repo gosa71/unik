@@ -1,0 +1,98 @@
+﻿<?php
+
+$domen = 'http://gamer.palgame.ru/authentication/?bu=palgame.ru';
+//$domen = 'http://www.sql.ru';
+
+$REPL = Array(
+	Array("/gamer\.palgame\.ru/authentication/iu", "sairius.com"),
+	//Array("/http:\/\/cdn\.test777\.com\/css\/images\/logo\.gif/i", "http://yastatic.net/web4/_/JsViUZKr8YfX2xwqJy4tLvde-tE.svg"),
+	//Array("/Авторизация/iu", "Колонизация"),
+	//Array("/294551/iu", "123456"),
+	//Array("/images\/flag\-ge\.png/iu", ""),
+	//Array("/new\/rules\/soccer\-rules\-2\.pdf/iu", "test.html"),
+);
+$NOREPLURL = Array(
+	//'http://www.sql.ru/forum/afregimage.aspx'
+);
+//----------------------------------------
+$URL = $domen . $_SERVER['REQUEST_URI'];
+
+function repl($t, $in)
+{
+	global $REPL;
+	global $NOREPLURL;
+	global $URL;
+	
+	if(t !== 'h')
+	{
+		foreach($NOREPLURL as $s)
+		{
+			if(strpos($URL, $s) !== false)return $in;
+		}
+	}
+	
+	$out = $in;
+	
+	//if utf8
+	//if($t !== 'h'){$out = mb_convert_encoding($out, 'UTF-8','CP1251');}
+	
+	foreach($REPL as $r)
+	{
+		$out = preg_replace($r[0], $r[1], $out);
+	}
+	
+	//if utf8
+	//if($t !== 'h')$out = mb_convert_encoding($out, 'CP1251','UTF-8');
+	
+	return $out;
+}
+
+
+$curl = curl_init();
+
+//echo $url;exit();
+curl_setopt($curl, CURLOPT_URL, $URL); 
+curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($curl, CURLOPT_HEADER, 1);
+curl_setopt($curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
+
+$tmpfname = dirname(__FILE__).'/cookie.txt';
+curl_setopt($curl, CURLOPT_COOKIEJAR, $tmpfname);
+curl_setopt($curl, CURLOPT_COOKIEFILE, $tmpfname);
+
+curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
+
+if (count($_POST)) 
+{
+     curl_setopt($curl, CURLOPT_POST, 1);
+     curl_setopt($curl, CURLOPT_POSTFIELDS, $_POST);
+}
+//header('Content-Type: text; charset=' . $encoding);
+
+$ret = curl_exec($curl);
+
+//var_dump($ret);
+list($header, $body) = explode("\r\n\r\n", $ret, 2);
+
+$header = explode("\r\n", $header);
+
+$isimg = false;
+foreach($header as $k=>$h)
+{
+	if(strpos($h, "Content-Type: image") !== FALSE)
+	{
+		$isimg = true;
+	}
+	if(strpos($h, "Transfer-Encoding") === FALSE)
+	{
+		header(repl('h', $h));
+	}
+}
+if($isimg)
+{
+	echo $body;
+}else{
+	echo repl('b', $body);
+}
